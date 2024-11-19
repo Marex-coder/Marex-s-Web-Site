@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="/style.css">
+<head>
+    <body style="background-color: black;">
+        <header id="spn">
+            <div class="bor">            
+                <span id="title2"><u>Marex's Web Site</u></span>
+            </div>
+            <div class="bor">
+                <span class="heading" ><a class="ital" href="/credit.html">Credit</a></span>
+                <span class="heading" ><a class="ital" href="/me.html">About Me</a></span>
+                <span class="heading" ><a class="ital" href="/shading.html">Back</a></span>
+                <span class="heading" ><a class="ital" href="/index.html">Home</a></span>
+            </div>
+        </header>
+        <div class="bor" align="center">
+            <hr style="border: 1px solid chartreuse;">
+            <h2><u>Rotation 2 Dimensions in Shader :</u></h2>
+            <h4>The 2d rotation is a mathematical calculation of Matrix 2 by 2 represented in this way:</h4>
+            <table align="center">
+                <thead>
+                    <tr>
+                        <th class="tableau">A</th>
+                        <th class="tableau">B</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tableau">C</td>
+                        <td class="tableau">D</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="long" >which makes two variable in the form of “vec2” for static displacement
+                 of the x/y axis by rotation axis “1.2,3.4” (1.2=x and 3.4=y) of “uv”.</h4>
+            <br>
+            <h4 class="long">“uv” is a mathematical calculation which allows you to redefine the correct center (to the nearest pixel) because
+                 the central pixel 0.0 is at the top left for a computer because it is the first pixel which loads</h4>
+            <h4>Here is the calculation:</h4>
+            <h5 class="long" style="font-weight: lighter;">vec2 uv=(gl_FragCoord.xy/v2Resolution-0.5)/vec2(v2Resolution.y/v2Resolution.x,1);</h5>
+            <h4 class="long">This explanation is only theoretical but the code in all this?</h4>
+            <h4 class="long">And here it is:</h4>
+            <h5 class="long" style="font-weight: lighter;">//Le Calcule Matriciel mat2<br>
+                mat2 R2d(float r){return mat2(cos(r),sin(r),-sin(r),cos(r));}<br>
+            <br>
+                void mainImage(out vec4 fragColor,in vec2 fragCoord){<br>
+            <br>
+                    //Le Calcule uv pour centrer le pixel 0,0<br>
+                    vec2 uv=(fragCoord/_res-0.5)/vec2(_res.y/_res.x,1);<br>
+            <br>
+                    //Le nom incrit vec2 "R2d" est le nom utilisable<br>
+                    vec2 R2d = uv * R2d(_t/4.);<br>
+            <br>
+                        //Le vec4 de sortie de l'image<br> 
+                    fragColor=vec4(0.,0.,0.);<br>
+                }</h5>
+            <h4 class="long">That's it for the lesson: 2d rotation.</h4>
+        </div>
+        <div align="center" class="bor">
+            <hr style="border: 1px solid chartreuse;">
+            <h6 align="bottom">Created by <a class="ital" href="/me.html">Marex</a></h6>
+            <h6 align="bottom">2024</h6>
+        </div>
+    </body>
+</head>
