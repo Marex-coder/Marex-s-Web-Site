@@ -1,76 +1,80 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="style.css">
+<html lang="en">
 <head>
-    <body style="background-color: black;">
-        <header id="spn">    
-            <div class="bor">            
-                <span id="title2"><u>Marex's Web Site</u></span>
-            </div>
-            <div class="bor">
-                <span class="heading" ><a class="ital" href="credit.html">Credit</a></span>
-                <span class="heading" ><a class="ital" href="me.html">About Me</a></span>
-                <span class="heading" ><a class="ital" href="shading.html">Back</a></span>
-                <span class="heading" ><a class="ital" href="index.html">Home</a></span>
-            </div>
-        </header>
-        <div class="bor" align="center">
-            <hr style="border: 1px solid chartreuse;">
-            <h2><u>Raymarching Loop :</u></h2>
-            <h4>What is a Raymarching Loop ?</h4>
-            <h4>The Raymarching Loop is used as a shader to display 3D.</h4>
-                <br>
-            <h4>But How ?</h4>
-            <h4>In a way if we break down the word “Raymarching Loop”, “Ray” means Ray You will see later why.</h4>
-            <h4>“Marching” in this case means moving forward, drawing a straight line.</h4>
-            <h4>And finally “Loop” as translated means a loop which restarts a calculation defined in our case.</h4>
-                <br>
-            <h4>But what about this famous calculation ?</h4>
-            <h4 class="long">So we must first visualize the Camera, the resolution frame of our screen and the surrounding 3d space:</h4>
-            <h4>Here is a schematic of this calculation:</h4>
-                <img src="RaymarhingLoop.jpg" height="350px">
-                <br>
-            <h4 class="long">And so we actually only see the 3D space but in fact a camera looks at the resolution and then only the 3D view.</h4>
-                <br>
-            <h4 class="long">So this is a basic 3D view and the Raymarching loop is the fact that we trace a line from the camera. Then in the first
-                 pixel of the screen (top left) to finally travel through 3D space, and if this famous path meets an object previously
-                  placed in 3D space. So we can decide to change the color of this object. And to add realism we will add calculations
-                   which will add changes in brightness to the object depending on its positioning towards the camera.</h4>
-            <h4 class="long">And to prevent the ray from going too far we define a limit that we will call (“far” in our example) which
-                 automatically causes it to resume at the next pixel.</h4>
-            <h4>Here is an example:</h4>
-                <img src="RaymarchingLoopRay.jpg" height="350px">
-                <br>
-            <h4 class="long">And but as a result the plot is done on all the pixels of the screen (The Resolution) Times the refresh rate of the screen
-                 (The number of Hz). with a quick calculation with a 1920x1080 60Hz screen we arrive at 124416000 Pixels to be updated per second!!!</h4>
-                <br>
-            <h4>So now I present to you the GLSL code of all this:</h4>
-            <h5 class="long" style="font-weight: lighter;">  vec2 rayCast(vec3 rO,vec3 rD){<br>
-                vec2 dist, result=vec2(0.);<br>
-                <br>
-                for(float i = 0.; i<128.; i++){<br>
-                    <br>
-                  dist = map(rO+rD*result.x);<br>
-                  if(dist.x<.0001||result.x>far) break;<br>
-                  <br>
-                  result.x += dist.x; result.y = dist.y;<br>
-                }<br>
-                 return result;<br>
-                }
-            </h5>
-                <br>
-            <h4 class="long">So we have the creation of a vec2 RayCast (Name of the Raymarch calculation) with the parameter “rO” (RayOrigin: the origin of the Ray) and
-                 “rD” (RayDirection: The Direction of the Ray).</h4>
-            <h4 class="long">We define 2 vec2: dist and result, “dist” for the distance and “result” for the result of the shots. “for” is the element
-                 that makes a loop using the float i. We calculate the distance for “dist” then apply the result obtained to “result”. We
-                  adjust some misunderstanding between “result” and “dist” then we send “result” for use.</h4>
-                <br>
-            <h3>That's it for the Raymarching Loop</h3>
-
-            </div>
-        <div class="bor" align="center">
-            <hr style="border: 1px solid chartreuse;">
-            <h6 align="bottom">Created by <a class="ital" href="me.html">Marex</a></h6>
-            <h6 align="bottom">2024</h6>      
-        </div>
-    </body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body style="background-color: black;">
+    <header id="spn">    
+        <div class="bor">            
+            <span id="title2"><u>Marex's Web Site</u></span>
+        </div>
+        <nav class="bor">
+            <span class="heading" ><a class="ital" href="credit.html">Credit</a></span>
+            <span class="heading" ><a class="ital" href="me.html">About Me</a></span>
+            <span class="heading" ><a class="ital" href="shading.html">Back</a></span>
+            <span class="heading" ><a class="ital" href="index.html">Home</a></span>
+        </nav>
+    </header>
+    <main class="bor" align="center">
+        <hr style="border: 1px solid chartreuse;">
+        <h2><u>Raymarching Loop :</u></h2>
+        <h4>What is a Raymarching Loop ?</h4>
+        <h4>The Raymarching Loop is used as a shader to display 3D.</h4>
+            <br>
+        <h4>But How ?</h4>
+        <h4>In a way if we break down the word “Raymarching Loop”, “Ray” means Ray You will see later why.</h4>
+        <h4>“Marching” in this case means moving forward, drawing a straight line.</h4>
+        <h4>And finally “Loop” as translated means a loop which restarts a calculation defined in our case.</h4>
+            <br>
+        <h4>But what about this famous calculation ?</h4>
+        <h4 class="long">So we must first visualize the Camera, the resolution frame of our screen and the surrounding 3d space:</h4>
+        <h4>Here is a schematic of this calculation:</h4>
+            <img src="RaymarhingLoop.jpg" height="350px">
+            <br>
+        <h4 class="long">And so we actually only see the 3D space but in fact a camera looks at the resolution and then only the 3D view.</h4>
+            <br>
+        <h4 class="long">So this is a basic 3D view and the Raymarching loop is the fact that we trace a line from the camera. Then in the first
+                pixel of the screen (top left) to finally travel through 3D space, and if this famous path meets an object previously
+                placed in 3D space. So we can decide to change the color of this object. And to add realism we will add calculations
+                which will add changes in brightness to the object depending on its positioning towards the camera.</h4>
+        <h4 class="long">And to prevent the ray from going too far we define a limit that we will call (“far” in our example) which
+                automatically causes it to resume at the next pixel.</h4>
+        <h4>Here is an example:</h4>
+            <img src="RaymarchingLoopRay.jpg" height="350px">
+            <br>
+        <h4 class="long">And but as a result the plot is done on all the pixels of the screen (The Resolution) Times the refresh rate of the screen
+                (The number of Hz). with a quick calculation with a 1920x1080 60Hz screen we arrive at 124416000 Pixels to be updated per second!!!</h4>
+            <br>
+        <h4>So now I present to you the GLSL code of all this:</h4>
+        <h5 class="long" style="font-weight: lighter;">  vec2 rayCast(vec3 rO,vec3 rD){<br>
+            vec2 dist, result=vec2(0.);<br>
+            <br>
+            for(float i = 0.; i<128.; i++){<br>
+                <br>
+                dist = map(rO+rD*result.x);<br>
+                if(dist.x<.0001||result.x>far) break;<br>
+                <br>
+                result.x += dist.x; result.y = dist.y;<br>
+            }<br>
+                return result;<br>
+            }
+        </h5>
+            <br>
+        <h4 class="long">So we have the creation of a vec2 RayCast (Name of the Raymarch calculation) with the parameter “rO” (RayOrigin: the origin of the Ray) and
+                “rD” (RayDirection: The Direction of the Ray).</h4>
+        <h4 class="long">We define 2 vec2: dist and result, “dist” for the distance and “result” for the result of the shots. “for” is the element
+                that makes a loop using the float i. We calculate the distance for “dist” then apply the result obtained to “result”. We
+                adjust some misunderstanding between “result” and “dist” then we send “result” for use.</h4>
+            <br>
+        <h3>That's it for the Raymarching Loop</h3>
+
+    </main>
+    <footer class="bor" align="center">
+        <hr style="border: 1px solid chartreuse;">
+        <h6 align="bottom">Created by <a class="ital" href="me.html">Marex</a></h6>
+        <h6 align="bottom">2024</h6>      
+    </footer>
+</body>
