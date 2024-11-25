@@ -4,34 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Curseur Blanc Clignotant</title>
-  <style>
-
-    .text-with-cursor {
-      display: inline-block;
-      position: relative;
-    }
-
-    .text-with-cursor::after {
-      content: ''; /* Ajoute un contenu vide */
-      display: inline-block;
-      width: 2px; /* Largeur du curseur */
-      height: 1em; /* Hauteur ajustée à la taille du texte */
-      background-color: white; /* Couleur blanche pour le curseur */
-      margin-left: 5px; /* Espace entre le texte et le curseur */
-      animation: blink 1s steps(1) infinite; /* Animation de clignotement */
-    }
-
-    /* Animation pour le clignotement */
-    @keyframes blink {
-      50% {
-        opacity: 0;
-      }
-    }
-  </style>
 </head>
 <body>
-  <div class="text-with-cursor">
-    Voici un texte avec un curseur blanc.
-  </div>
 </body>
 </html>
