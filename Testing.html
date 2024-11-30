@@ -3,28 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GLSL Responsive Canvas</title>
+    <title>Images Responsives</title>
     <style>
-        canvas {
-            display: block;
-            width: 90%; /* Le canevas occupe 90% de la largeur du conteneur */
-            max-width: 400px; /* Limite la largeur maximale */
-            aspect-ratio: 1; /* Maintient un carré */
-            margin: 20px auto; /* Centré avec marge */
-            border: 5px solid #2e2e2e;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Style optionnel */
+        /* CSS pour rendre les images responsives */
+        img {
+            max-width: 100%; /* Limite la largeur de l'image au conteneur */
+            height: auto; /* Conserve les proportions de l'image */
+            display: block; /* Évite les espaces blancs sous les images */
+        }
+
+        /* Style optionnel pour un conteneur centré */
+        .container {
+            max-width: 800px; /* Taille maximale de la page */
+            margin: 0 auto; /* Centre la page horizontalement */
+            padding: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Bienvenue sur ma page</h1>
-    <H1>
-      Et voici du texte après le canevas. Le rendu GLSL s’intègre naturellement dans la mise en page.
-  </H1>
-    <canvas id="glCanvas"></canvas>
-    <H1>
-        Et voici du texte après le canevas. Le rendu GLSL s’intègre naturellement dans la mise en page.
-    </H1>
-    <script type="module" src="script.js"></script>
+    <div class="container">
+        <h1>Exemple d'Images Responsives</h1>
+        <p>
+            Voici une image qui s'adapte à la taille de l'écran tout en conservant ses proportions :
+        </p>
+        <img src="https://via.placeholder.com/1200x600" alt="Image responsive">
+        <p>
+            Tu peux ajouter autant d'images que tu veux, elles seront toutes responsives :
+        </p>
+        <img src="https://via.placeholder.com/800x400" alt="Image responsive">
+    </div>
 </body>
 </html>
