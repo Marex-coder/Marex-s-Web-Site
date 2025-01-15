@@ -17,6 +17,7 @@
             overflow: hidden;
         }
         canvas {
+            overflow: hidden;
             display: block;
             aspect-ratio: 16 / 9;
             width: 80%;
@@ -36,11 +37,12 @@
             margin-top: 30px;
             border: 2px solid #32CD32; /* Lime Green */
             border-radius: 12px;
-            box-shadow: 0 0 10px #32CD32;
+            box-shadow: 0 0 100px #32CD32;
         }
     </style>
 </head>
 <body style="background-color: black;">
+    
     <header id="spn">    
         <div class="bor">            
             <span id="title2"><u>Marex's Web Site</u></span>
@@ -55,7 +57,7 @@
 
     <canvas  id="shaderCanvas"></canvas>
     
-    <div class="shader-code">
+    <div style="scrollbar-width:  none; scrollbar-color: chartreuse black;" class="shader-code">
         <pre>
 precision mediump float;
 
@@ -84,6 +86,11 @@ uniform vec2 u_resolution;
         </script>
 
         <script type="module" src="script1.js"></script>
-</main>
+        <footer class="bor" align="center">
+            <hr style="border: 1px solid chartreuse;">
+            <h6 align="bottom">Created by <a class="ital" href="me.html">Marex</a></h6>
+            <h6 align="bottom">2024</h6>      
+        </footer>        
+    </main>
 </body>
 </html>
