@@ -1,0 +1,94 @@
+#head {
+
+    background-color: black;
+    padding: 0%;
+    font-family: 'Courier New', Courier, monospace;
+    color: chartreuse;
+    
+}
+
+.ital {
+
+    font-style: italic;
+    color: inherit;
+    text-decoration: none;
+    cursor: default;
+
+}
+
+.heading {
+
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    float: right;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 20px;
+    font-weight: bold;
+
+}
+
+#title2 {
+
+    font-family: 'Courier New', Courier, monospace;    
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.bor {
+
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    color:chartreuse;
+    width: 100%;
+    padding: 0px;
+    
+}
+
+#spn {
+
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.tableau {
+    border: 1px solid chartreuse; /* Bordure grise */
+    padding: 10px; /* Espace intérieur */
+}
+
+.long {
+
+    padding-left: 5%;
+    padding-right: 5%;
+
+}
+
+.IMGA {
+
+    max-height: 350px;
+    height: auto;
+    margin-left: 10%;  
+    margin-right: 10%;  
+
+}
+/* CSS pour rendre les images responsives */
+.img {
+    max-width: 100%; /* Limite la largeur de l'image au conteneur */
+    height: auto; /* Conserve les proportions de l'image */
+    display: block; /* Évite les espaces blancs sous les images */
+    
+}
+
+/* Style optionnel pour un conteneur centré */
+.container {
+    max-width: 400px; /* Taille maximale de la page */
+    margin: 0 auto; /* Centre la page horizontalement */
+    padding: 20px;
+}
