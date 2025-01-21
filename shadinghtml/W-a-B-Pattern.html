@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W and B Pattern</title>
+    <link rel="stylesheet" href="../cssfiles/style.css">
+    <link rel="icon" type="favicon.ico" href="../icon/favicon.ico">
+
+    </style>
+</head>
+<body style="background-color: black;">
+    <header id="spn">
+        <div class="bor">            
+            <span id="title2"><u>Marex's Web Site</u></span>
+        </div>
+        <nav class="bor">
+            <span class="heading" ><a class="ital" href="../credit.html">Credit</a></span>
+            <span class="heading" ><a class="ital" href="../me.html">About Me</a></span>
+            <span class="heading" ><a class="ital" href="../shading.html">Back</a></span>
+            <span class="heading" ><a class="ital" href="../index.html">Home</a></span>
+        </nav>
+    </header>
+    <main class="bor" align="center">
+
+        <hr style="border: 1px solid chartreuse;">
+        <h2><u>The White and Black Pattens :</u></h2>
+        <h4>The white and black line patterns are an alternation of black and white lines of this style:</h4>
+        <div class="container">
+            <img src="../ressources/WaBPIMG1.png" class="img">
+        </div>
+            <br>
+        <h4>or even many more lines than that:</h4>
+        <div class="container">
+            <img src="../ressources/WaBPIMG2.png" class="img">
+        </div>
+        <br>
+        <h4>So, but how does it work?</h4>
+        <h4>What makes these lines is just one line of code which is the one below:</h4>
+        <h5 style="font-weight: lighter;">float pattern = ceil(sin( uv.x )); //To put more line multiply UV</h5>
+            <br>
+        <h4 class="long">If we decompose the line of code we can see that it is a comma value (float) named pattern (because
+             it is a line pattern) which is equivalent to the rounding of its upper integer of the Sinusoid of
+              uv .x, and if we want horizontal lines, we replace “uv.x” with “uv.y”.</h4>
+            <br>
+        <h4>But so Graphically “ceil(sin(” gives this:</h4>
+        <div class="container">
+            <img src="../ressources/WaBPIMG3.png" class="img">
+        </div>
+        <h4>So it goes from 0 to 1 to 0 to 1 in a loop. But what does this have to do with lines you ask me?</h4>
+        <h4>Well this is very simple, when we set the output value of the screen to 1. the screen is displayed
+             in White, And in Black if it is equivalent to 0.</h4>
+             <br>
+        <h4>But how can you make any color other than Black, Gray and White?</h4>
+        <h4>And quite simply we can dose the quantity of Red, Green and Blue, and 
+            if we put the same dose it will make our White, Gray and Black.</h4>
+            <br>
+        <h4>Now that explains we can play with some parameters of this pattern.
+            How to rotate it with the 2D Rotate function:</h4>
+
+            <style>
+                canvas {
+                    display: block;
+                    width: 90%; /* Le canevas occupe 90% de la largeur du conteneur */
+                    max-width: 400px; /* Limite la largeur maximale */
+                    aspect-ratio: 1; /* Maintient un carré */
+                    margin: 20px auto; /* Centré avec marge */
+                    border: 0px solid #2e2e2e;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Style optionnel */
+                }
+            </style>
+            
+            <canvas id="glCanvas"></canvas>
+
+            <h4>We can still do a lot of things with these patterns, but I'll let
+                 you discover them and make these patterns, your patterns.</h4>
+                <br>
+            <h4>That's all for the White and Black line patterns.</h4>
+
+            <script type="module" src="../jsfiles/script.js"></script>
+
+    </main>
+    <footer align="center" class="bor">
+        <hr style="border: 1px solid chartreuse;">
+        <h6 align="bottom">Created by <a class="ital" href="../me.html">Marex</a></h6>
+        <h6 align="bottom">2024</h6>
+    </footer>
+</body>
